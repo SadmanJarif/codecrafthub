@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodeCraftHub — a personalized learning platform for developers. Pick your goals, get a tailored learning path, track progress and build real skills.">
+  <title>CodeCraftHub - Personalized Learning for Developers</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+        <div>
+          <h1>CodeCraftHub</h1>
+          <p class="tagline">Personalized learning for developers</p>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#paths">Learning Paths</a>
+        <a href="#recommend">For You</a>
+        <a href="#my-learning">My Learning</a>
+        <a href="#add-goal">Add a Goal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero / personalization -->
+    <section class="hero" id="recommend">
+      <h2>Learn what matters to you, at your pace.</h2>
+      <p>
+        Tell CodeCraftHub your interests and current level and we will build a
+        personal learning path from real developer topics — Python, JavaScript,
+        Java, Generative AI, DevOps and more.
+      </p>
+      <form id="profile-form" class="profile-form">
+        <label for="interest">I want to learn
+          <select id="interest" name="interest">
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="Generative AI">Generative AI</option>
+            <option value="Web Development">Web Development</option>
+            <option value="DevOps">DevOps</option>
+          </select>
+        </label>
+        <label for="level">My level is
+          <select id="level" name="level">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </label>
+        <label for="hours">Hours per week
+          <input type="number" id="hours" name="hours" min="1" max="40" value="5">
+        </label>
+        <button type="submit" class="btn-primary">Build My Learning Path</button>
+      </form>
+      <p id="recommendation" class="recommendation" aria-live="polite"></p>
+    </section>
+
+    <!-- Progress summary -->
+    <section class="stats" aria-label="Your progress">
+      <div class="stat"><span id="stat-total">0</span><small>Courses in my learning</small></div>
+      <div class="stat"><span id="stat-completed">0</span><small>Completed</small></div>
+      <div class="stat"><span id="stat-progress">0%</span><small>Overall progress</small></div>
+    </section>
+
+    <!-- Course catalog -->
+    <section id="paths">
+      <h2>Explore Learning Paths</h2>
+      <div class="filters">
+        <input type="search" id="search" placeholder="Search courses, e.g. Python" aria-label="Search courses">
+        <select id="filter-category" aria-label="Filter by category">
+          <option value="All">All categories</option>
+          <option value="Python">Python</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Java">Java</option>
+          <option value="Generative AI">Generative AI</option>
+          <option value="Web Development">Web Development</option>
+          <option value="DevOps">DevOps</option>
+        </select>
+        <select id="filter-level" aria-label="Filter by level">
+          <option value="All">All levels</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+      <div id="course-list" class="course-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- My learning -->
+    <section id="my-learning">
+      <h2>My Learning</h2>
+      <p class="muted">Courses you added appear here. Mark them complete as you finish, or remove ones you no longer need.</p>
+      <div id="my-list" class="course-grid" aria-live="polite"></div>
+      <p id="my-empty" class="muted">Nothing here yet — add a course from the catalog or create your own goal below.</p>
+    </section>
+
+    <!-- Add a custom goal -->
+    <section id="add-goal">
+      <h2>Add Your Own Learning Goal</h2>
+      <form id="goal-form" class="goal-form">
+        <label for="goal-title">Goal / course title
+          <input type="text" id="goal-title" name="goal-title" placeholder="e.g. Build a REST API with Flask" required maxlength="100">
+        </label>
+        <label for="goal-category">Category
+          <select id="goal-category" name="goal-category">
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="Generative AI">Generative AI</option>
+            <option value="Web Development">Web Development</option>
+            <option value="DevOps">DevOps</option>
+          </select>
+        </label>
+        <label for="goal-level">Level
+          <select id="goal-level" name="goal-level">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </label>
+        <button type="submit" class="btn-success">Add to My Learning</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CodeCraftHub — Final Project: Building Personalized Learning for Developers.</p>
+      <p class="muted">Built with HTML, CSS and JavaScript. Your learning list is saved in your browser (localStorage).</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
