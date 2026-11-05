@@ -5,9 +5,9 @@
 
 :root {
   --navy: #0f2040;
-  --blue: #2563eb;
+  --blue: #8B5CF6;
   --blue-dark: #1d4ed8;
-  --green: #16a34a;
+  --green: #F59E0B;
   --green-dark: #15803d;
   --red: #dc2626;
   --red-dark: #b91c1c;
@@ -49,7 +49,7 @@ input[type="text"], input[type="number"], input[type="search"], select { padding
 
 /* ---------- Buttons ---------- */
 .btn-primary {
-  background-color: #2563eb;
+  background-color: #8B5CF6;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -71,7 +71,7 @@ input[type="text"], input[type="number"], input[type="search"], select { padding
 }
 
 .btn-success {
-  background-color: #16a34a;
+  background-color: #F59E0B;
   color: #ffffff;
   border: none;
   border-radius: 8px;

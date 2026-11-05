@@ -116,7 +116,7 @@ function markComplete(id) {
   renderMyLearning();
 }
 
-function deleteCourse(id) {
+function handleDelete(id) {
   myLearning = myLearning.filter((entry) => entry.id !== id);
   saveMyLearning();
   renderMyLearning();
@@ -167,9 +167,9 @@ function renderMyLearning() {
 
     const deleteButton = document.createElement("button");
     deleteButton.className = "btn-danger";
-    deleteButton.textContent = "Delete";
-    deleteButton.setAttribute("aria-label", "Delete " + course.title);
-    deleteButton.addEventListener("click", () => deleteCourse(course.id));
+    deleteButton.textContent = "Remove";
+    deleteButton.setAttribute("aria-label", "Remove " + course.title);
+    deleteButton.addEventListener("click", () => handleDelete(course.id));
 
     actions.append(completeButton, deleteButton);
     card.append(title, badges, description, track, status, actions);
